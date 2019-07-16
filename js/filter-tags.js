@@ -63,7 +63,7 @@ $(function() {
 			var jsonDX = [];
 
 			var urlTitle = 'https://marshmello.oss-cn-hangzhou.aliyuncs.com/';
-//			var urlResize = '?x-oss-process=image/resize,p_50';
+			var urlResize = '?x-oss-process=image/resize,p_50';
 			$('.sortable__nav a').click(function() {
 				$('.sortable__nav a').removeClass('is-active');
 				$(this).addClass('is-active');
@@ -128,12 +128,15 @@ $(function() {
 						var name = jsonAll[j].ObjectName.substring(titleNum1 + 1, titleNum2);
 						var content = jsonAll[j].ObjectName.substring(titleNum2 + 1, nameNum);
 						var Id = jsonAll[j].id;
-						var imgUrl = urlTitle + jsonAll[j].ObjectName;
+						var imgUrl = urlTitle + jsonAll[j].ObjectName+urlResize;
+						var dataUrl = urlTitle + jsonAll[j].ObjectName;
 						$('#sortable').append(
-							"<a class='card demo'><img id='" +
+							"<a class='card'><img id='" +
 							Id +
 							"' class='card__picture' src='" +
 							imgUrl +
+							"'data-src='" +
+							dataUrl +
 							"'><div class='card-infos'><h2 class='card——badge'>" +
 							title +
 							"</h2><h2 class='card__title'>" +
@@ -153,12 +156,15 @@ $(function() {
 						var name = jsonAll[j].ObjectName.substring(titleNum1 + 1, titleNum2);
 						var content = jsonAll[j].ObjectName.substring(titleNum2 + 1, nameNum);
 						var Id = jsonAll[j].id;
-						var imgUrl = urlTitle + jsonAll[j].ObjectName;
+						var imgUrl = urlTitle + jsonAll[j].ObjectName+urlResize;
+						var dataUrl = urlTitle + jsonAll[j].ObjectName;
 						$('#sortable').append(
-							"<a class='card demo'><img id='" +
+							"<a class='card'><img id='" +
 							Id +
 							"' class='card__picture' src='" +
 							imgUrl +
+							"'data-src='" +
+							dataUrl +
 							"'><div class='card-infos'><h2 class='card——badge'>" +
 							title +
 							"</h2><h2 class='card__title'>" +
@@ -187,12 +193,15 @@ $(function() {
 					var name = jsonAPP[i].ObjectName.substring(titleNum1 + 1, titleNum2);
 					var content = jsonAPP[i].ObjectName.substring(titleNum2 + 1, nameNum);
 					var Id = jsonAPP[i].id;
-					var imgUrl = urlTitle + jsonAPP[i].ObjectName;
+					var imgUrl = urlTitle + jsonAPP[i].ObjectName+urlResize;
+					var dataUrl = urlTitle + jsonAPP[i].ObjectName;
 					$('#sortable').append(
 						"<a class='card'><img id='" +
 						Id +
 						"' class='card__picture' src='" +
 						imgUrl +
+						"'data-src='" +
+						dataUrl +
 						"'><div class='card-infos'><h2 class='card——badge'>" +
 						title +
 						"</h2><h2 class='card__title'>" +
@@ -212,12 +221,15 @@ $(function() {
 					var name = jsonWEB[i].ObjectName.substring(titleNum1 + 1, titleNum2);
 					var content = jsonWEB[i].ObjectName.substring(titleNum2 + 1, nameNum);
 					var Id = jsonWEB[i].id;
-					var imgUrl = urlTitle + jsonWEB[i].ObjectName;
+					var imgUrl = urlTitle + jsonWEB[i].ObjectName+urlResize;
+					var dataUrl = urlTitle + jsonWEB[i].ObjectName;
 					$('#sortable').append(
 						"<a class='card'><img id='" +
 						Id +
 						"' class='card__picture' src='" +
 						imgUrl +
+						"'data-src='" +
+						dataUrl +
 						"'><div class='card-infos'><h2 class='card——badge'>" +
 						title +
 						"</h2><h2 class='card__title'>" +
@@ -237,12 +249,15 @@ $(function() {
 					var name = jsonPM[i].ObjectName.substring(titleNum1 + 1, titleNum2);
 					var content = jsonPM[i].ObjectName.substring(titleNum2 + 1, nameNum);
 					var Id = jsonPM[i].id;
-					var imgUrl = urlTitle + jsonPM[i].ObjectName;
+					var imgUrl = urlTitle + jsonPM[i].ObjectName+urlResize;
+					var dataUrl = urlTitle + jsonPM[i].ObjectName;
 					$('#sortable').append(
 						"<a class='card'><img id='" +
 						Id +
 						"' class='card__picture' src='" +
 						imgUrl +
+						"'data-src='" +
+						dataUrl +
 						"'><div class='card-infos'><h2 class='card——badge'>" +
 						title +
 						"</h2><h2 class='card__title'>" +
@@ -262,12 +277,15 @@ $(function() {
 					var name = jsonDX[i].ObjectName.substring(titleNum1 + 1, titleNum2);
 					var content = jsonDX[i].ObjectName.substring(titleNum2 + 1, nameNum);
 					var Id = jsonDX[i].id;
-					var imgUrl = urlTitle + jsonDX[i].ObjectName;
+					var imgUrl = urlTitle + jsonDX[i].ObjectName+urlResize;
+					var dataUrl = urlTitle + jsonDX[i].ObjectName;
 					$('#sortable').append(
 						"<a class='card'><img id='" +
 						Id +
 						"' class='card__picture' src='" +
 						imgUrl +
+						"'data-src='" +
+						dataUrl +
 						"'><div class='card-infos'><h2 class='card——badge'>" +
 						title +
 						"</h2><h2 class='card__title'>" +
@@ -295,7 +313,7 @@ $(function() {
 		$('body').css('overflow', 'hidden');
 		alertView.css('display', 'block');
 		main.css('filter', 'blur(10px)');
-		var viewImg = $(this).attr('src');
+		var viewImg = $(this).attr('data-src');
 		alertImg.attr('src', viewImg);
 		var viewId = $(this).attr('id');
 		console.log(viewId)
@@ -321,7 +339,7 @@ $(function() {
 			};
 		}
 		$('.cut-left').click(function() {
-			var leftImg = $('#' + (--viewId)).attr('src');
+			var leftImg = $('#' + (--viewId)).attr('data-src');
 			alertImg.attr('src', leftImg);
 
 			alertImg.removeClass('alert-img');
@@ -331,7 +349,7 @@ $(function() {
 			}
 		});
 		$('.cut-right').click(function() {
-			var rightImg = $('#' + (++viewId)).attr('src');
+			var rightImg = $('#' + (++viewId)).attr('data-src');
 			alertImg.attr('src', rightImg);
 
 			alertImg.removeClass('alert-img');
