@@ -49,7 +49,34 @@
 	-webkit-text-stroke-width: 0.2px;
 	-moz-osx-font-smoothing: grayscale;
 }
-
+html {
+    font-size : 20px;
+}
+@media only screen and (min-width: 401px){
+    html {
+        font-size: 25px !important;
+    }
+}
+@media only screen and (min-width: 428px){
+    html {
+        font-size: 26.75px !important;
+    }
+}
+@media only screen and (min-width: 481px){
+    html {
+        font-size: 30px !important; 
+    }
+}
+@media only screen and (min-width: 569px){
+    html {
+        font-size: 35px !important; 
+    }
+}
+@media only screen and (min-width: 1800px){
+    html {
+        font-size: 20px !important; 
+    }
+}
 html {
 	/*font-size: .7em;*/
 	-ms-text-size-adjust: 100%;
@@ -64,7 +91,7 @@ body {
 	color: var(--text-color);
 	background: var(--body-bg-color);
 	transition: all 0.3s ease 0s;
-	font: normal 300 18px 'Open-sans', helvetica, sans-serif;
+	/*font: normal 300 16px 'Open-sans', helvetica, sans-serif;*/
 }
 
 #fizz {
@@ -121,10 +148,11 @@ h1 {
 
 h4 {
 	margin-left: 1.2rem;
+	margin-bottom: .5rem;
 }
 
 h5 {
-	padding-left: 2rem;
+	padding-left: 1.2rem;
 	margin: 0;
 }
 
@@ -177,7 +205,7 @@ svg .bottom.right {
 	position: absolute;
 	cursor: pointer;
 	top: 8px;
-	right: 8px;
+	left: 8px;
 	z-index: 10;
 	padding: 8px 12px;
 	/*background: rgba(29, 29, 29, 0.75);*/
@@ -274,35 +302,33 @@ svg.svg-dark .bottom {
 
 .heading {
 	width: 100%;
-	margin-top: 30px;
 	margin-left: 1rem;
 	font-weight: 900;
 	font-size: 1.318rem;
 	text-transform: uppercase;
 	letter-spacing: .1ch;
 	line-height: 1;
-	margin-bottom: 1rem;
 	position: relative;
 	color: var(--text-color);
 }
 
 .heading:after {
 	display: block;
-	content: '';
-	position: absolute;
-	width: 4px;
-	height: 20px;
-	left: -12px;
-	top: 0px;
-	border-radius: 3px;
-	background: var(--heading-bg-color);
-	bottom: 0;
+    content: '';
+    position: absolute;
+    width: 0.3rem;
+    height: 1.3rem;
+    left: -0.6rem;
+    top: 0px;
+    border-radius: 0.3rem;
+    background: var(--heading-bg-color);
+    bottom: 0;
 }
 
 .heading-basic li {
 	color: var(--text-color);
 	margin: 10px;
-	font-size: 16px;
+	font-size: 0.8rem;
 	font-weight: 500;
 }
 
@@ -310,6 +336,7 @@ svg.svg-dark .bottom {
 	color: var(--text-color);
 	width: 100%;
 	margin-top: 0;
+	margin-bottom: .5rem;
 	margin-left: 1rem;
 }
 
@@ -425,7 +452,7 @@ svg.svg-dark .bottom {
 	font-size: 1rem;
 	font-weight: 600;
 	display: block;
-	line-height: 16px;
+	line-height: 2rem;
 	border-bottom: 2px solid transparent;
 }
 
