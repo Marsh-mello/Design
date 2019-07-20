@@ -64,7 +64,7 @@ html {
 }
 @media only screen and (min-width: 481px){
     html {
-        font-size: 32px !important; 
+        font-size: 30px !important; 
     }
 }
 @media only screen and (min-width: 1300px){
@@ -345,8 +345,8 @@ svg.svg-dark .bottom {
 }
 
 .card {
-	padding: 5px;
-	border-radius: 16px;
+	padding: 0.25rem;
+	border-radius: 0.8rem;
 	cursor: pointer;
 	display: flex;
 	flex-direction: column;
@@ -362,7 +362,7 @@ svg.svg-dark .bottom {
 .card__picture {
 	display: block;
 	width: 100%;
-	border-radius: 12px;
+	border-radius: 0.6rem;
 	filter: var(--img-right);
 	height: auto;
 	transition: all 0.3s ease 0s;
@@ -372,7 +372,7 @@ svg.svg-dark .bottom {
 }
 
 .card-infos {
-	padding: 5px 10px 5px 10px;
+	padding: 0.25rem 0.5rem 0.25rem 0.5rem;
 	color: var(--text-color);
 }
 .card-infos h2{
