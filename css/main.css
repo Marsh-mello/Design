@@ -17,6 +17,7 @@
 	--img-right:brightness(100%);
 	--svg-color: #000;
 	--heading-bg-color: linear-gradient(135deg, #ff710f, #ff3a2a);
+	--theme-show-color: 4px 13px 30px 1px rgba(252, 56, 56, 0.4);
 }
 
  :root[theme='dark'] {
@@ -32,6 +33,7 @@
 	--img-right:brightness(90%);
 	--svg-color: #fff;
 	--heading-bg-color: linear-gradient(135deg, #09c3d9, #01ff8d);
+	--theme-show-color: 4px 13px 30px 1px rgba(1, 255, 141, 0.4);
 }
 
 @font-face {
@@ -223,6 +225,7 @@ svg .bottom.right {
 }
 
 #theme-btn:hover::after {
+	box-shadow: var(--theme-show-color);
 	background-color: #ff710f;
 	color: #fff;
 }
