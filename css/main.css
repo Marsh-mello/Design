@@ -11,13 +11,13 @@
 	--container-shadow-color: 0 0 15px silver;
 	--alert-bg-color: rgba(229, 229, 229, .95);
 	--text-color: #333;
-	--tab-text-color: #ff710f;
+	--tab-text-color: #1bb4ff;
 	--card-bg-color: #fff;
 	--card-bg-badeg: #dfe5e9;
-	--img-right:brightness(100%);
 	--svg-color: #000;
-	--heading-bg-color: linear-gradient(135deg, #ff710f, #ff3a2a);
-	--theme-show-color: 4px 13px 30px 1px rgba(252, 56, 56, 0.4);
+	--svg-bg-color: #1bb4ff;
+	--heading-bg-color: linear-gradient(135deg, #83d6f4, #1bb4ff);
+	--theme-show-color: 4px 13px 30px 1px rgba(27, 180, 255, 0.4);
 }
 
  :root[theme='dark'] {
@@ -27,13 +27,13 @@
 	--container-shadow-color: 0 15px 12px rgba(0, 0, 0, 0.12);
 	--alert-bg-color: rgba(31, 30, 30, .95);
 	--text-color: #c2c8ce;
-	--tab-text-color: #01ff8d;
+	--tab-text-color: #356dfb;
 	--card-bg-color: linear-gradient(270deg, #595C66 1%, #73767F 100%);
 	--card-bg-badeg: #45535d;
-	--img-right:brightness(90%);
 	--svg-color: #fff;
-	--heading-bg-color: linear-gradient(135deg, #09c3d9, #01ff8d);
-	--theme-show-color: 4px 13px 30px 1px rgba(1, 255, 141, 0.4);
+	--svg-bg-color: #1e54dc;
+	--heading-bg-color: linear-gradient(135deg, #09c3d9, #1e54dc);
+	--theme-show-color: 4px 13px 30px 1px rgba(53, 109, 251, 0.4);
 }
 
 @font-face {
@@ -68,15 +68,60 @@ html {
     html {
         font-size: 30px !important; 
     }
+    .content{
+    	font-size: 80px;
+    	margin-left:160px ;
+    }
+    .head{
+    	margin-top:10px ;
+    }
+    .work{
+    	margin-top:250px ;
+    }
+}
+@media only screen and (min-width: 1200px){
+    html {
+        font-size: 26px !important; 
+    }
+    .content{
+    	font-size: 50px;
+    	margin-left:200px ;
+    }
+    .head{
+    	margin-top:140px ;
+    }
+    .work{
+    	margin-top:500px ;
+    }
 }
 @media only screen and (min-width: 1300px){
     html {
         font-size: 22px !important; 
     }
+    .content{
+    	font-size: 60px;
+    	margin-left:50px ;
+    }
+    .head{
+    	margin-top:310px ;
+    }
+    .work{
+    	margin-top:676px ;
+    }
 }
 @media only screen and (min-width: 1800px){
     html {
         font-size: 20px !important; 
+    }
+    .content{
+    	font-size: 80px;
+    	margin-left:50px ;
+    }
+    .head{
+    	margin-top:350px ;
+    }
+    .work{
+    	margin-top:676px ;
     }
 }
 html {
@@ -104,13 +149,22 @@ body {
 	z-index: -1;
 	background: var(--body-bg-color);
 }
-
+.main{
+	position: relative;
+}
 .container {
 	width: 100%;
 	max-width: 1480px;
-	margin: 50px auto 20px;
-	padding: 20px;
+	/*margin: 50px auto 20px;
+	padding: 20px;*/
 	border-radius: 6px;
+	position: absolute;
+	top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 10;
 	/*background-color: var(--container-bg-color);*/
 	/*box-shadow: var(--container-shadow-color);*/
 }
@@ -159,16 +213,15 @@ h5 {
 }
 
 .head {
-	display: flex;
+	display: flex; 
+	flex-wrap: wrap;
 	justify-content: center;
-	height: 400px;
+	
 }
 
 body svg {
 	position: relative;
 	z-index: 5;
-	width: 350px;
-	height: 350px;
 	animation:mymove .3s linear;
 }
 
@@ -177,31 +230,30 @@ body svg path {
 	transition-delay: 100ms;
 }
 
-svg .top {
-	opacity: 1;
-	z-index: 2;
+
+.cls-4 {
+	fill: var(--svg-bg-color);
 }
 
-svg .top.left {
-	fill: url(#orange);
+.cls-5 {
+	fill: var(--svg-bg-color);
 }
 
-svg .top.right {
-	fill: url(#purple);
+.cls-6 {
+	opacity: 0.2;
+	mix-blend-mode: multiply;
 }
 
-svg .bottom {
-	opacity: 0;
-	z-index: 1;
+.cls-7 {
+	fill: var(--body-bg-color);
+}
+.cls-8 {
+	fill: url(#theme-white);
+}
+.svg-dark .cls-8 {
+	fill: url(#theme-dark);
 }
 
-svg .bottom.left {
-	fill: url(#pink);
-}
-
-svg .bottom.right {
-	fill: url(#bajablast);
-}
 
 #theme-btn::after {
 	position: absolute;
@@ -212,8 +264,8 @@ svg .bottom.right {
 	padding: 8px 12px;
 	/*background: rgba(29, 29, 29, 0.75);*/
 	border-radius: 30px;
-	border: 2px solid #ff710f;
-	color: #ff710f;
+	border: 2px solid #1bb4ff;
+	color: #1bb4ff;
 	content: "夜 间 模 式";
 	font-size: 13px;
 	font-family: 'Hind';
@@ -226,39 +278,30 @@ svg .bottom.right {
 
 #theme-btn:hover::after {
 	box-shadow: var(--theme-show-color);
-	background-color: #ff710f;
+	background-color: #1bb4ff;
 	color: #fff;
 }
 
-svg.svg-dark .top {
-	opacity: 0;
-}
-
-svg.svg-dark .bottom {
-	opacity: 1;
-}
 
 #theme-btn.dark::after {
 	font-family: 'Hind';
 	content: "日 间 模 式";
-	border: 2px solid #01ff8d;
-	color: #01ff8d;
+	border: 2px solid #356dfb;
+	color: #356dfb;
 }
 
 #theme-btn.dark:hover::after {
-	background-color: #01ff8d;
+	background-color: #356dfb;
 	color: #fff;
 }
-
 .content {
-	position: absolute;
+	/*position: absolute;*/
 	font-family: 'Hind';
-	font-size: 80px;
 	font-weight: 600;
 	text-align: center;
 	color: var(--svg-color);
-	line-height: 270px;
 	z-index: 100;
+	line-height: 1px;
 	animation:mymove .3s linear;
 }
 
@@ -327,10 +370,12 @@ svg.svg-dark .bottom {
     background: var(--heading-bg-color);
     bottom: 0;
 }
-
+.heading-basic{
+	display: block;
+}
 .heading-basic li {
 	color: var(--text-color);
-	margin: 10px;
+	margin: 1rem;
 	font-size: 0.8rem;
 	font-weight: 500;
 }
@@ -342,7 +387,10 @@ svg.svg-dark .bottom {
 	margin-bottom: .5rem;
 	margin-left: 1rem;
 }
-
+.present{
+	position: absolute;
+	left: 350px;
+}
 .wrapper {
 	padding: 40px 0;
 }
@@ -366,12 +414,8 @@ svg.svg-dark .bottom {
 	display: block;
 	width: 100%;
 	border-radius: 0.6rem;
-	filter: var(--img-right);
 	height: auto;
 	transition: all 0.3s ease 0s;
-}
-.card:hover .card__picture{
-	filter: brightness(100%);
 }
 
 .card-infos {
@@ -434,8 +478,8 @@ svg.svg-dark .bottom {
 	display: flex;
 	list-style: none;
 	justify-content: center;
-	margin-top: 20px;
-	margin-bottom: 20px;
+	margin-top: 60px;
+	margin-bottom: 40px;
 }
 
 @keyframes shade {
@@ -602,7 +646,7 @@ svg.svg-dark .bottom {
 	top: 0;
 	left: 0;
 	right: 0;
-	padding: 50px 30px;
+	padding: 50px 20px;
 	margin: auto;
 	width: 65rem;
 }
