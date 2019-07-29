@@ -64,7 +64,7 @@ html {
         font-size: 26.75px !important;
     }
 }
-@media only screen and (min-width: 481px){
+@media only screen and (min-width: 750px){
     html {
         font-size: 30px !important; 
     }
@@ -77,6 +77,27 @@ html {
     }
     .work{
     	margin-top:250px ;
+    }
+    .container{
+		width: 750px;
+    }
+}
+@media only screen and (min-width: 1080px){
+    html {
+        font-size: 30px !important; 
+    }
+    .content{
+    	font-size: 80px;
+    	margin-left:160px ;
+    }
+    .head{
+    	margin-top:10px ;
+    }
+    .work{
+    	margin-top:250px ;
+    }
+    .container{
+		width: 1060px;
     }
 }
 @media only screen and (min-width: 1200px){
@@ -93,6 +114,9 @@ html {
     .work{
     	margin-top:500px ;
     }
+    .container{
+		width: 1100px;
+    }
 }
 @media only screen and (min-width: 1300px){
     html {
@@ -108,6 +132,9 @@ html {
     .work{
     	margin-top:676px ;
     }
+    .container{
+		width: 1200px;
+    }
 }
 @media only screen and (min-width: 1800px){
     html {
@@ -122,6 +149,9 @@ html {
     }
     .work{
     	margin-top:676px ;
+    }
+    .container{
+		width: 1480px;
     }
 }
 html {
@@ -141,20 +171,7 @@ body {
 	/*font: normal 300 16px 'Open-sans', helvetica, sans-serif;*/
 }
 
-#fizz {
-	width: 100%;
-	height: 100%;
-	top: 0;
-	position: fixed;
-	z-index: -1;
-	background: var(--body-bg-color);
-}
-.main{
-	position: relative;
-}
 .container {
-	width: 100%;
-	max-width: 1480px;
 	/*margin: 50px auto 20px;
 	padding: 20px;*/
 	border-radius: 6px;
@@ -229,7 +246,6 @@ body svg path {
 	transition: opacity 650ms ease;
 	transition-delay: 100ms;
 }
-
 
 .cls-4 {
 	fill: var(--svg-bg-color);
