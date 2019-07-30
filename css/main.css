@@ -154,6 +154,24 @@ html {
 		width: 1480px;
     }
 }
+@media only screen and (min-width: 2500px){
+    html {
+        font-size: 20px !important; 
+    }
+    .content{
+    	font-size: 80px;
+    	margin-left:50px ;
+    }
+    .head{
+    	margin-top:380px ;
+    }
+    .work{
+    	margin-top:1000px ;
+    }
+    .container{
+		width: 1800px;
+    }
+}
 html {
 	/*font-size: .7em;*/
 	-ms-text-size-adjust: 100%;
