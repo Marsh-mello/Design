@@ -336,19 +336,6 @@ body svg path {
 	color: var(--svg-color);
 	z-index: 100;
 	line-height: 1px;
-	animation:mymove .3s linear;
-}
-
-@keyframes mymove {
-	0% {
-		filter:blur(100px);
-	}
-	20% {
-		filter:blur(50px);
-	}
-	100% {
-		filter:blur(0);
-	}
 }
 
 #bg {
