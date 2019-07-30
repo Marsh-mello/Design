@@ -7,6 +7,7 @@
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 		<link rel="stylesheet" href="css/main.css" />
 		<link rel="stylesheet" href="css/sortable.min.css" />
+		<link rel="stylesheet" href="https://cdn.bootcss.com/animate.css/3.7.0/animate.css">
 		<script type="text/javascript">
 			loopy()
 
@@ -54,8 +55,8 @@
 			</svg>
 			<div class="container">
 				<div class="head">
-					<h2 class="content">UI DESIGNER.</h2>
-					<ul class="heading-basic">
+					<h2 class="content xScroll" data-animation="fadeInLeftBig">UI DESIGNER.</h2>
+					<ul class="heading-basic xScroll" data-animation="fadeInRight">
 						<li>黄宏昌/1996</li>
 						<li>工作年限：3年</li>
 						<li>手机：131-0103-8615</li>
@@ -63,12 +64,12 @@
 						<li>期望岗位：UI设计师/视觉设计师</li>
 					</ul>
 				</div>
-				<div class="work">
-					<h1 class="heading">工作经历</h1>
-					<p class="heading-title">Work experience.</p>
-					<h4>坤盾天成科技有限公司/2017.04-至今</h4>
-					<h5>岗位职责</h5>
-					<ul class="heading-basic">
+				<div class="work xScroll" data-animation="fadeInUp">
+					<h1 class="heading xScroll" data-animation="fadeInUp">工作经历</h1>
+					<p class="heading-title xScroll" data-animation="fadeInUp">Work experience.</p>
+					<h4 class=" xScroll" data-animation="fadeInUp">坤盾天成科技有限公司/2017.04-至今</h4>
+					<h5 class=" xScroll" data-animation="fadeInUp">岗位职责</h5>
+					<ul class="heading-basic xScroll" data-animation="fadeInUp">
 						<li>负责相关产品的设计UI设计，参与从创意到执行产品周期的所有阶段；</li>
 						<li>配合开发对各项目的方案进行UI设计，完成软件产品的界面风格设定，进行设计规范建立与维护；</li>
 						<li>负责APP/Web网站和数据可视化的视觉设计和创意工作；</li>
@@ -77,16 +78,16 @@
 					</ul>
 					<h4>腾龙科技有限公司/2016.09-2017.03</h4>
 					<h5>岗位职责</h5>
-					<ul class="heading-basic">
+					<ul class="heading-basic xScroll" data-animation="fadeInUp">
 						<li>负责公司网站页面的迭代更新设计；</li>
 						<li>配合运营完成所需的图片、海报，H5等相关运营设计工作；</li>
 						<li>负责公司线下活动的宣传物料，如画册、海报、DM单、折页、易拉宝等平面设计工作；</li>
 						<li>负责公司对外日常工作宣传及广告、产品、活动的平面设计；</li>
 					</ul>
 				</div>
-				<h1 class="heading">作品集</h1>
-				<p class="heading-title">Collection of works.</p>
-				<ul class="sortable__nav">
+				<h1 class="heading xScroll" data-animation="fadeInUp">作品集</h1>
+				<p class="heading-title xScroll" data-animation="fadeInUp">Collection of works.</p>
+				<ul class="sortable__nav xScroll" data-animation="fadeInUp">
 					<a id="btn_all" class="nav__link is-active">全部</a>
 					<a id="btn1" class="nav__link">APP</a>
 					<a id="btn2" class="nav__link">WEB</a>
@@ -134,6 +135,47 @@
 		<script type="text/javascript" src="js/filter-tags.js"></script>
 		<script type="text/javascript" src="js/iscroll.js"></script>
 		<script type="text/javascript" src="js/macy.js"></script>
+		<script>
+			var xScroll = function(el) {
+			    xScroll.prototype.init(el)
+			};
+			xScroll.prototype = {
+			    init: function(_el) {
+			        this.start(_el);
+			        $(window).on('scroll', function() {
+			            xScroll.prototype.start(_el);
+			            console.log($(window).scrollTop())
+			        })
+			    },
+			    start: function(_el) {
+			        $(_el).each(function() {
+			            var _self = $(this);
+			            var xScrollTop = $(window).scrollTop();
+			            var isWindowHeiget = $(window).height() * 0.8;
+			            var _class = $(this).data('animation');
+			            if (xScrollTop + isWindowHeiget > $(this).offset().top) {
+			                _self.addClass(_class);
+			                _self.css({
+			                    "visibility": "visible"
+			                })
+			            }
+			        })
+			    }
+			};
+			$.fn.extend({
+			    xScroll: function(config) {
+			        console.log($(this));
+			        $(this).each(function() {
+			            $(this).addClass("animated");
+			            $(this).css({
+			                "visibility": "hidden"
+			            });
+			            new xScroll($(this))
+			        })
+			    }
+			})
+			$(".xScroll").xScroll();
+		</script>
 		<script>
 			var svg = document.querySelector("svg");
 			var btn = document.querySelector("#theme-btn")
