@@ -292,8 +292,8 @@ body svg path {
 #theme-btn::after {
 	position: absolute;
 	cursor: pointer;
-	top: 8px;
-	right: 8px;
+	top: 20px;
+	right: 10px;
 	z-index: 10;
 	padding: 8px 12px;
 	/*background: rgba(29, 29, 29, 0.75);*/
