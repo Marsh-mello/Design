@@ -10,11 +10,10 @@
 		<link rel="stylesheet" href="https://cdn.bootcss.com/animate.css/3.7.0/animate.css">
 		<script type="text/javascript">
 			loopy()
-
 			function loopy() {
 				var sWord = ""
 				while(sWord != "。。。") { //设置密码
-					sWord = prompt("输入正确密码才能登陆!")
+					sWord = prompt("请联系我!")
 				}
 			}
 		</script>
@@ -65,10 +64,10 @@
 					</ul>
 				</div>
 				<div class="work xScroll" data-animation="fadeInUp">
-					<h1 class="heading xScroll" data-animation="fadeInUp">工作经历</h1>
-					<p class="heading-title xScroll" data-animation="fadeInUp">Work experience.</p>
-					<h4 class=" xScroll" data-animation="fadeInUp">坤盾天成科技有限公司/2017.04-至今</h4>
-					<h5 class=" xScroll" data-animation="fadeInUp">岗位职责</h5>
+					<h1 class="heading">工作经历</h1>
+					<p class="heading-title">Work experience.</p>
+					<h4>坤盾天成科技有限公司/2017.04-至今</h4>
+					<h5>岗位职责</h5>
 					<ul class="heading-basic">
 						<li>负责相关产品的设计UI设计，参与从创意到执行产品周期的所有阶段；</li>
 						<li>配合开发对各项目的方案进行UI设计，完成软件产品的界面风格设定，进行设计规范建立与维护；</li>
@@ -86,7 +85,7 @@
 					</ul>
 				</div>
 				<h1 class="heading xScroll" data-animation="fadeInUp">作品集</h1>
-				<p class="heading-title xScroll" data-animation="fadeInUp">Collection of works.</p>
+				<p class="heading-title">Collection of works.</p>
 				<ul class="sortable__nav xScroll" data-animation="fadeInUp">
 					<a id="btn_all" class="nav__link is-active">全部</a>
 					<a id="btn1" class="nav__link">APP</a>
@@ -125,7 +124,7 @@
 				<a style="background-position: -80px 0;" class="cut-right"></a>
 			</div>
 			<i></i>
-			<img class="alert-view-img" src="" title="点击空白处退出" />
+			<img class="alert-view-img xScroll" src="" title="点击空白处退出"/>
 		</div>
 		<div class="t-right-bar">
 			<div class="t-bar-rocket" id="back-to-top"> 返回顶部</div>
@@ -144,7 +143,6 @@
 			        this.start(_el);
 			        $(window).on('scroll', function() {
 			            xScroll.prototype.start(_el);
-			            console.log($(window).scrollTop())
 			        })
 			    },
 			    start: function(_el) {
@@ -164,7 +162,6 @@
 			};
 			$.fn.extend({
 			    xScroll: function(config) {
-			        console.log($(this));
 			        $(this).each(function() {
 			            $(this).addClass("animated");
 			            $(this).css({
@@ -180,14 +177,12 @@
 			var svg = document.querySelector("svg");
 			var btn = document.querySelector("#theme-btn")
 			btn.addEventListener("click", toggleColor);
-
 			// toggle class on <body>
 			function toggleColor(e) {
 				svg.classList.toggle("svg-dark");
 				btn.classList.toggle("dark");
 			}
 			const toggleBtn = document.querySelector("#theme-btn");
-
 			toggleBtn.addEventListener('click', (e) => {
 				if(document.documentElement.hasAttribute('theme')) {
 					document.documentElement.removeAttribute('theme');
@@ -202,7 +197,6 @@
 					$(".t-right-bar").fadeOut(500);
 				}
 			});
-
 			$("#back-to-top").click(function() {
 				$('body,html').animate({
 					scrollTop: 0
