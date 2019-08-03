@@ -11,13 +11,13 @@
 	--container-shadow-color: 0 0 15px silver;
 	--alert-bg-color: rgba(229, 229, 229, .95);
 	--text-color: #333;
-	--tab-text-color: #1bb4ff;
+	--tab-text-color: #5b37b7;
 	--card-bg-color: #fff;
 	--card-bg-badeg: #dfe5e9;
 	--svg-color: #000;
-	--svg-bg-color: #1bb4ff;
-	--heading-bg-color: linear-gradient(135deg, #83d6f4, #1bb4ff);
-	--theme-show-color: 4px 13px 30px 1px rgba(27, 180, 255, 0.4);
+	--svg-bg-color: #5b37b7;
+	--heading-bg-color: linear-gradient(135deg, #008aff, #5b37b7);
+	--theme-show-color: 4px 13px 30px 1px rgba(108, 64, 220, 0.4);
 }
 
  :root[theme='dark'] {
@@ -28,7 +28,8 @@
 	--alert-bg-color: rgba(31, 30, 30, .95);
 	--text-color: #c2c8ce;
 	--tab-text-color: #356dfb;
-	--card-bg-color: linear-gradient(270deg, #595C66 1%, #73767F 100%);
+	/*--card-bg-color: linear-gradient(45deg, #838385, #454545);*/
+	--card-bg-color: #838385;
 	--card-bg-badeg: #45535d;
 	--svg-color: #fff;
 	--svg-bg-color: #1e54dc;
@@ -79,7 +80,7 @@ html {
     	margin-top:250px ;
     }
     .container{
-		width: 900px;
+		width: 750px;
     }
 }
 @media only screen and (min-width: 1080px){
@@ -97,7 +98,7 @@ html {
     	margin-top:250px ;
     }
     .container{
-		width: 1080px;
+		width: 1060px;
     }
 }
 @media only screen and (min-width: 1200px){
@@ -115,7 +116,7 @@ html {
     	margin-top:500px ;
     }
     .container{
-		width: 1200px;
+		width: 1100px;
     }
 }
 @media only screen and (min-width: 1300px){
@@ -133,7 +134,7 @@ html {
     	margin-top:676px ;
     }
     .container{
-		width: 1280px;
+		width: 1200px;
     }
 }
 @media only screen and (min-width: 1800px){
@@ -152,24 +153,6 @@ html {
     }
     .container{
 		width: 1480px;
-    }
-}
-@media only screen and (min-width: 2500px){
-    html {
-        font-size: 20px !important; 
-    }
-    .content{
-    	font-size: 80px;
-    	margin-left:50px ;
-    }
-    .head{
-    	margin-top:380px ;
-    }
-    .work{
-    	margin-top:1000px ;
-    }
-    .container{
-		width: 1800px;
     }
 }
 html {
@@ -292,14 +275,14 @@ body svg path {
 #theme-btn::after {
 	position: absolute;
 	cursor: pointer;
-	top: 20px;
-	right: 10px;
+	top: 8px;
+	right: 8px;
 	z-index: 10;
 	padding: 8px 12px;
 	/*background: rgba(29, 29, 29, 0.75);*/
 	border-radius: 30px;
-	border: 2px solid #1bb4ff;
-	color: #1bb4ff;
+	border: 2px solid #5b37b7;
+	color: #5b37b7;
 	content: "夜 间 模 式";
 	font-size: 13px;
 	font-family: 'Hind';
@@ -312,7 +295,7 @@ body svg path {
 
 #theme-btn:hover::after {
 	box-shadow: var(--theme-show-color);
-	background-color: #1bb4ff;
+	background-color: #5b37b7;
 	color: #fff;
 }
 
@@ -395,12 +378,29 @@ body svg path {
 	display: block;
 }
 .heading-basic li {
+	cursor: pointer;
 	color: var(--text-color);
 	margin: 1rem;
 	font-size: 0.8rem;
 	font-weight: 500;
+	position: relative;
 }
-
+.heading-basic li:after{
+	content: '';
+    display: block;
+    width: 10px;
+    height: 2px;
+    background: var(--text-color);
+    position: absolute;
+    left: 0;
+    -webkit-transform-origin: left;
+    transform-origin: left;
+    transition: all 300ms ease-out;
+}
+.heading-basic li:hover:after{
+	-webkit-transform: scaleX(4);
+    transform: scaleX(4); 
+}
 .heading-title {
 	color: var(--text-color);
 	width: 100%;
